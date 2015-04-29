@@ -42,9 +42,9 @@ namespace SETGRID
 
 	void SetGrid::gauss()
 	{
-		for (int i = 0; i < Size1; i++)
+		for (int i = 1; i < Size1-1; i++)
 		{
-			for (int j = 0; j < Size2; j++)
+			for (int j = 1; j < Size2-1; j++)
 			{
 				ThisGrid.get(i, j) = 0.25*( ThisGrid.get(i, j + 1) +
 											ThisGrid.get(i, j - 1) +
@@ -63,9 +63,9 @@ namespace SETGRID
 
 	void SetGrid::jacobi()
 	{
-		for (int i = 0; i < Size1; i++)
+		for (int i = 1; i < Size1-1; i++)
 		{
-			for (int j = 0; j < Size2; j++)
+			for (int j = 1; j < Size2-1; j++)
 			{
 				NextGrid.get(i, j) = 0.25*( ThisGrid.get(i, j + 1) +
 											ThisGrid.get(i, j - 1) +
