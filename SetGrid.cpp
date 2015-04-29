@@ -60,4 +60,31 @@ namespace SETGRID
 		gauss();
 	}
 
+
+	void SetGrid::jacobi()
+	{
+		for (int i = 0; i < Size1; i++)
+		{
+			for (int j = 0; j < Size2; j++)
+			{
+				NextGrid.get(i, j) = 0.25*( ThisGrid.get(i, j + 1) +
+											ThisGrid.get(i, j - 1) +
+											ThisGrid.get(i + 1, j) +
+											ThisGrid.get(i - 1, j));
+			}
+		}
+	}
+
+
+	void SetGrid::jacobiUpdate()
+	{
+		Time += 1;
+		jacobi();
+		setBoundary(NextGrid);
+		double *temp ;
+		temp = ThisGrid.Array;
+		ThisGrid.Array = NextGrid.Array;
+		NextGrid.Array = temp;
+
+	}
 }
