@@ -14,6 +14,7 @@ namespace DIM2ARRAY
 
 	Dim2Array::~Dim2Array()
 	{
+		delete[] Array;
 	}
 
 	double& Dim2Array::get(int a, int b)

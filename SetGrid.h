@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Dim2Array.h"
+#include "MyTriBandSolver.h"
 
 
 #ifndef SETGRID_H
@@ -12,6 +13,7 @@ namespace SETGRID
 {
 	class SetGrid
 	{
+
 	public:
 		SetGrid(int m, int n);
 		~SetGrid();
@@ -28,12 +30,15 @@ namespace SETGRID
 
 	private:
 		void initialize();
-		void setBoundary(Dim2Array Grid);
+		void matrixGenerator();
+		void setBoundary(Dim2Array &Grid);
 		
 		void gauss();
 		void jacobi();
 		void line();
-		
+		Dim2Array Matrix;
+		double *temp;
+
 	};
 
 }
