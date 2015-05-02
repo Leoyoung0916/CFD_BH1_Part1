@@ -1,7 +1,6 @@
 # include "stdafx.h"
-# include "math.h"
 # include "MyTriBandSolver.h"
-# include <iostream>
+
 using namespace std;
 
 
@@ -11,9 +10,9 @@ using namespace std;
 这是一个算三对角阵线性方程组的函数
 传入：
 int n 是矩阵大小，
-double A 是一个 n*n的一维数组的首地址，
-double X是一个n的一维数组的首地址，
-double B是一个n的一维数组
+double* A 是一个 n*n的一维数组的首地址，
+double* X是一个n的一维数组的首地址，
+double* B是一个n的一维数组的首地址。
 你说我容易吗……
 
 值得注意的是，我使用的是Doolittle方法作LU分解，因此，A的顺序主子式均非0
